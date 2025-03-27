@@ -21,15 +21,19 @@
                 int cureAmt = 20;
                 Console.WriteLine("You wander into an abandoned castle, your hand hovering above the hilt of your shortsword at your side. As you ascend the cobalt carpeted stairs, the Bandit King leaps from his throne. Prepare to fight!" +
                     "\nPress s to slash, c to cure, or z to zap");
-                while(playHealth > 0 | enemHealth > 0)
+                while(playHealth > 0 && enemHealth > 0)
                 {
                     Console.Write($"Your turn. Your health is currently {playHealth}/100. What will you do? ");
                     act = Console.ReadKey().KeyChar;
                     switch (act)
                     {
                         case 's':
-                            Console.WriteLine($"You take your shortsword and expertly slash at the brigand. You deal {slashDam} damage!");
+                            Console.WriteLine($"You take your shortsword and expertly slash at the brigand. You deal {slashDam} damage! The enemy has {enemHealth}/100");
                             enemHealth = enemHealth - slashDam;
+                            if(enemHealth <= 0)
+                            {
+                                Console.WriteLine("YOU WIN, YOUR ENEMY IS VANQUISHED!");
+                            }
                             break;
 
                         case 'c':
@@ -42,6 +46,7 @@
                             enemHealth = enemHealth - zapDam;
                             break;
                     }
+                    Console.Write("The enemy's turn now");
                 }
                 Console.Write("Would you like to go again? (y/n): ");
             choice = Console.ReadLine().ToLower();
