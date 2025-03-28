@@ -13,7 +13,7 @@
             char act;
             do
             {
-                int enemRoll = random.Next(1,4);
+                //int enemRoll = random.Next(1,4);
                 int playHealth = 100;
                 int enemHealth = 100;
                 int slashDam = 11;
@@ -25,6 +25,7 @@
                 {
                     Console.Write($"Your turn. Your health is currently {playHealth}/100. What will you do? ");
                     act = Console.ReadKey().KeyChar;
+                    int enemRoll = random.Next(1, 4);
                     switch (act)
                     {
                         case 's':
@@ -46,7 +47,23 @@
                             enemHealth = enemHealth - zapDam;
                             break;
                     }
+                 
                     Console.Write("The enemy's turn now");
+                    switch (enemRoll)
+                    {
+                        case 0:
+                            Console.WriteLine($"Your foe steps forward and slashes wildly! They deal {slashDam} damage to you, you now have {playHealth}/100!");
+                            playHealth -= slashDam;
+                            break;
+                        case 1:
+                            Console.WriteLine($"Your foe pulls out an oddly shaped bottle and smashes it against their forehead. They heal for {cureAmt} health!");
+                            enemHealth += cureAmt;
+                            break;
+                        case 2:
+                            Console.WriteLine($"Your enemie claps his hands together loud enough to create a thunderous shockwave! You take {zapDam} damage!");
+                            playHealth -= zapDam;
+                            break;
+                    }
                 }
                 Console.Write("Would you like to go again? (y/n): ");
             choice = Console.ReadLine().ToLower();
