@@ -64,6 +64,15 @@
                             playHealth -= zapDam;
                             break;
                     }
+                    
+                }
+                if(playHealth <= 0)
+                {
+                    Console.WriteLine("You have perished.");
+                }
+                else if(enemHealth <= 0)
+                {
+                    Console.WriteLine("You are victorious!");
                 }
                 Console.Write("Would you like to go again? (y/n): ");
             choice = Console.ReadLine().ToLower();
