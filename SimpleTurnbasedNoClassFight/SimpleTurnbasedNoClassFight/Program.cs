@@ -23,44 +23,44 @@
                     "\nPress s to slash, c to cure, or z to zap");
                 while(playHealth > 0 && enemHealth > 0)
                 {
-                    Console.Write($"Your turn. Your health is currently {playHealth}/100. What will you do? ");
+                    Console.Write($"\nYour turn. Your health is currently {playHealth}/100. What will you do? ");
                     act = Console.ReadKey().KeyChar;
                     int enemRoll = random.Next(1, 4);
                     switch (act)
                     {
                         case 's':
-                            Console.WriteLine($"You take your shortsword and expertly slash at the brigand. You deal {slashDam} damage! The enemy has {enemHealth}/100");
+                            Console.WriteLine($"\nYou take your shortsword and expertly slash at the brigand. You deal {slashDam} damage! The enemy has {enemHealth}/100");
                             enemHealth = enemHealth - slashDam;
                             if(enemHealth <= 0)
                             {
-                                Console.WriteLine("YOU WIN, YOUR ENEMY IS VANQUISHED!");
+                                Console.WriteLine("\nYOU WIN, YOUR ENEMY IS VANQUISHED!");
                             }
                             break;
 
                         case 'c':
-                            Console.WriteLine($"You take a small blue potion from your satchel and down the whole thing. You recover {cureAmt} health and are now at {playHealth}/100!");
+                            Console.WriteLine($"\nYou take a small blue potion from your satchel and down the whole thing. You recover {cureAmt} health and are now at {playHealth}/100!");
                             playHealth = playHealth + cureAmt;
                             break;
 
                         case 'z':
-                            Console.WriteLine($"You press your thumb and index fingers together and make a deafening snap. You deal {zapDam} damage!");
+                            Console.WriteLine($"\nYou press your thumb and index fingers together and make a deafening snap. You deal {zapDam} damage!");
                             enemHealth = enemHealth - zapDam;
                             break;
                     }
                  
-                    Console.Write("The enemy's turn now");
+                    Console.Write("\nThe enemy's turn now");
                     switch (enemRoll)
                     {
                         case 0:
-                            Console.WriteLine($"Your foe steps forward and slashes wildly! They deal {slashDam} damage to you, you now have {playHealth}/100!");
+                            Console.WriteLine($"\nYour foe steps forward and slashes wildly! They deal {slashDam} damage to you, you now have {playHealth}/100!");
                             playHealth -= slashDam;
                             break;
                         case 1:
-                            Console.WriteLine($"Your foe pulls out an oddly shaped bottle and smashes it against their forehead. They heal for {cureAmt} health!");
+                            Console.WriteLine($"\nYour foe pulls out an oddly shaped bottle and smashes it against their forehead. They heal for {cureAmt} health!");
                             enemHealth += cureAmt;
                             break;
                         case 2:
-                            Console.WriteLine($"Your enemie claps his hands together loud enough to create a thunderous shockwave! You take {zapDam} damage!");
+                            Console.WriteLine($"\nYour enemie claps his hands together loud enough to create a thunderous shockwave! You take {zapDam} damage!");
                             playHealth -= zapDam;
                             break;
                     }
