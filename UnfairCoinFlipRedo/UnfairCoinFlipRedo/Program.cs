@@ -14,10 +14,17 @@
             ,"Your parents change the conversation when your name comes up!"};
             Random random = new Random();
             bool heads = false;
+            
             do
             {
                 int timesFlip = 0;
                 int coinChance = random.Next(1, 5);
+
+                if(coinChance == 1)
+                {
+                    Console.WriteLine(responses[0]);
+                }
+                timesFlip++;
                 //while (heads == false)
                 //{
                 //    Console.WriteLine("Lets flip the coin!");
