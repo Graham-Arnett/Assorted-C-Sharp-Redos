@@ -24,11 +24,11 @@
                 {
                     Console.WriteLine(responses[0]);
                 }
-                else if (coinChance == 0 && timesFlip <4)
+                else if (coinChance == 0 && timesFlip <=4)
                 {
                     Console.WriteLine(responses[timesFlip]);
                 }
-                else
+                else if(timesFlip >= 4)
                 {
                     Console.WriteLine("Listen, it was funny after the first couple times but I don't care anymore just cross the bridge and leave.");
                 }
