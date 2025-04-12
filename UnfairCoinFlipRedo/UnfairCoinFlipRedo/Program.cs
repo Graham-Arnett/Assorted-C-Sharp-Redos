@@ -19,14 +19,15 @@
             {
                 int timesFlip = 0;
                 int coinChance = random.Next(1, 5);
-
+                
                 if(coinChance == 1)
                 {
-                    Console.WriteLine(responses[0]);
+                    Console.WriteLine($"Good job, you got heads and won the game! You've flipped the coin {timesFlip} times\n" + responses[0]);
+                    heads = true;
                 }
                 else if (coinChance == 0 && timesFlip <=4)
                 {
-                    Console.WriteLine(responses[timesFlip]);
+                    Console.WriteLine($"You lost, you got tails\n " + responses[timesFlip]);
                 }
                 else if(timesFlip >= 4)
                 {
@@ -48,7 +49,7 @@
                 //    timesFlip++;
                 //}
 
-                Console.Write("Would you like to go again? (y/n): ");
+                Console.Write("Would you like to go flip again? (y/n): ");
                 redo = Console.ReadKey().KeyChar;
             } while (redo == 'y' || redo == 'Y');
         }
