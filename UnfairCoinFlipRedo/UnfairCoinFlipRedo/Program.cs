@@ -22,18 +22,21 @@
                 
                 if(coinChance == 1)
                 {
-                    Console.WriteLine($"Good job, you got heads and won the game! You've flipped the coin {timesFlip} times\n" + responses[0]);
+                    timesFlip++;
+                    Console.WriteLine($"\nGood job, you got heads and won the game! You've flipped the coin {timesFlip} times\n" + responses[0]);
                     heads = true;
                 }
-                else if (coinChance == 0 && timesFlip <=4)
+                else if (coinChance <= 4 && coinChance > 1 && timesFlip <=4)
                 {
-                    Console.WriteLine($"You lost, you got tails\n " + responses[timesFlip]);
+                    timesFlip++;
+                    Console.WriteLine($"\nYou lost, you got tails\n " + responses[timesFlip]);
                 }
                 else if(timesFlip >= 4)
                 {
-                    Console.WriteLine("Listen, it was funny after the first couple times but I don't care anymore just cross the bridge and leave.");
+                    timesFlip++;
+                    Console.WriteLine("\nListen, it was funny after the first couple times but I don't care anymore just cross the bridge and leave.");
                 }
-                timesFlip++;
+                //timesFlip++;
                 //while (heads == false)
                 //{
                 //    Console.WriteLine("Lets flip the coin!");
@@ -49,7 +52,7 @@
                 //    timesFlip++;
                 //}
 
-                Console.Write("Would you like to go flip again? (y/n): ");
+                Console.Write("\n\nWould you like to go flip again? (y/n): ");
                 redo = Console.ReadKey().KeyChar;
             } while (redo == 'y' || redo == 'Y');
         }
