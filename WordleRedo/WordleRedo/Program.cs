@@ -20,6 +20,7 @@ namespace WordleRedo
             char redo;
             Random random = new Random();
             bool gameOver = false;
+            int turns = 0;
             string[] words = {"ANTSY","AMPLE","AGILE","AFTER","BLOCK","BLACK","BLOAT","BLANK","BOOTS","BOATS",
 "BRINE","BRICK","BONES","BONEY","CLACK","CLOAK","COATS","COMBS","CHILL","CRIMP","CHIMP","CHAMP","CHOMP",
 "DEALT","DYING","DEEMS","EXTRA","EXERT","FIGGY","FOOLS","GREAT","GHOUL","GHAST","GOATS","GRATE","GUMBO",
@@ -32,10 +33,15 @@ namespace WordleRedo
                 //we need a for loop to iterate through the chosen word and match the letters at position
                 //we need to change the colors depending on if that letter is in the right spot or not
                 //it would be cool if we could straight up limit entering more or less than 5 letters
-
+                string guess;
                 int pickedWord = random.Next(words.Length);
                 string answer = words[pickedWord];
-               
+               while(victory != false && turns <= 6)
+                {
+                    Console.WriteLine("Your guess: ");
+                    guess = Console.ReadLine();
+                    if()
+                }
 
                 Console.ForegroundColor = ConsoleColor.White;
                 if (victory == true)
