@@ -36,11 +36,24 @@ namespace WordleRedo
                 string guess;
                 int pickedWord = random.Next(words.Length);
                 string answer = words[pickedWord];
-               while(victory != false && turns <= 6)
+               while(victory == false && turns <= 6)
                 {
                     Console.WriteLine("Your guess: ");
-                    guess = Console.ReadLine();
-                    if()
+                    guess = Console.ReadLine().ToUpper();
+                   for(int i = 0; i < answer.Length; i++)
+                    {
+                        if (guess[i] == answer[i])
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                        else if (answer.Contains(guess[i]) && guess[i] != answer[i])
+                        {
+                            Console.ForegroundColor= ConsoleColor.Yellow;
+                        }
+
+                        Console.Write($"" + guess[i].ToString() + " ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
                 }
 
                 Console.ForegroundColor = ConsoleColor.White;
