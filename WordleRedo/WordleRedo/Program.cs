@@ -40,6 +40,13 @@ namespace WordleRedo
                 {
                     Console.WriteLine("Your guess: ");
                     guess = Console.ReadLine().ToUpper();
+
+                    if(guess == answer)
+                    {
+                        Console.WriteLine("\n\nYOU WON!");
+                        victory = true;
+                    }
+
                    for(int i = 0; i < answer.Length; i++)
                     {
                         if (guess[i] == answer[i])
