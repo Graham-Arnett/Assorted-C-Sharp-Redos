@@ -61,6 +61,7 @@ namespace WordleRedo
 
                         Console.Write($"" + guess[i].ToString() + " ");
                         Console.ForegroundColor = ConsoleColor.White;
+                        turns++;
                     }
                 }
 
