@@ -39,7 +39,7 @@ namespace WordleRedo
                 string answer = words[pickedWord];
                while(victory == false && turns <= 6)
                 {
-                    Console.WriteLine("Your guess: ");
+                    Console.Write("\nYour guess: ");
                     guess = Console.ReadLine().ToUpper();
 
                     if(guess == answer)
