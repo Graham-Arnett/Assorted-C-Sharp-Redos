@@ -20,7 +20,7 @@ namespace WordleRedo
             char redo;
             Random random = new Random();
            
-            int turns = 0;
+            
             string[] words = {"ANTSY","AMPLE","AGILE","AFTER","BLOCK","BLACK","BLOAT","BLANK","BOOTS","BOATS",
 "BRINE","BRICK","BONES","BONEY","CLACK","CLOAK","COATS","COMBS","CHILL","CRIMP","CHIMP","CHAMP","CHOMP",
 "DEALT","DYING","DEEMS","EXTRA","EXERT","FIGGY","FOOLS","GREAT","GHOUL","GHAST","GOATS","GRATE","GUMBO",
@@ -34,6 +34,7 @@ namespace WordleRedo
                 //we need to change the colors depending on if that letter is in the right spot or not
                 //it would be cool if we could straight up limit entering more or less than 5 letters
                 bool victory = false;
+                int turns = 0;
                 string guess;
                 int pickedWord = random.Next(words.Length);
                 string answer = words[pickedWord];
@@ -61,8 +62,9 @@ namespace WordleRedo
 
                         Console.Write($"" + guess[i].ToString() + " ");
                         Console.ForegroundColor = ConsoleColor.White;
-                        turns++;
+                      
                     }
+                    turns++;
                 }
 
                 Console.ForegroundColor = ConsoleColor.White;
@@ -71,6 +73,7 @@ namespace WordleRedo
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("\nWOAH! You won! Would you like to suggest a new 5 letter word to add? (y/n): ");
                 }
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("\n\nWould you like to play again? (y/n): ");
                 redo = Console.ReadKey().KeyChar;
             } while (redo == 'y' || redo == 'Y');
