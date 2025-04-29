@@ -18,7 +18,7 @@
             {
                 Console.Write("\nHow long would you like the password to be: ");
                 int length = int.Parse(Console.ReadLine());
-                Console.Write($"Your password is: ");
+                Console.Write($"Your passcode is: ");
                 for(int i = 0; i < length; i++)
                 {
                     int type = random.Next(0, 3);
