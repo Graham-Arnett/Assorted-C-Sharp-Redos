@@ -20,7 +20,16 @@
 
             do
             {
+                Console.WriteLine();
+                for(int i = 0; i < 6; i++)
+                {
+                    int scoreResult = random.Next(1,21);
+                    scores[i] = scoreResult;
 
+                    Console.WriteLine($"" + stats[i] + ": " + scores[i]);
+                }
+
+                
                 Console.Write("\nWould you like to roll a new character? (y/n): ");
                 redo = Console.ReadKey().KeyChar;
             } while (redo == 'y' || redo == 'Y');
