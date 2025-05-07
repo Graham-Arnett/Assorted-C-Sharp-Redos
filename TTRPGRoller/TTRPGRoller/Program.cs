@@ -1,11 +1,31 @@
-﻿namespace TTRPGRoller
+﻿using System.Diagnostics;
+using System.IO;
+using System.Text;
+
+namespace TTRPGRoller
 {
     internal class Program
     {
+
+        static void WriteFile(string Filename)
+        {
+            File.WriteAllText(Filename, "Hello World");
+        }
+
+        static void ReadFile(string Filename) 
+        {
+         Console.WriteLine(File.ReadAllText(Filename));
+            //ReadAllText returns a string, ReadAllLines returns an array of strings
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to my ttrpg roller!");
-            
+
+            //string Filename = @"C:\repos\max";
+            string Filename = AppDomain.CurrentDomain.BaseDirectory;
+            WriteFile(Filename);
+            ReadFile(Filename);
+
             Random random = new Random();
             char redo;
             string[] stats = {"STRENGTH","DEXTERITY","INTELLIGENCE","WISDOM","CONSTITUTION","CHARISMA"};
