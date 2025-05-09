@@ -7,16 +7,16 @@ namespace TTRPGRoller
     internal class Program
     {
 
-        static void WriteFile(string Filename)
-        {
-            File.WriteAllText(Filename, "Hello World");
-        }
+        //static void WriteFile(string Filename)
+        //{
+        //    File.WriteAllText(Filename, "Hello World");
+        //}
 
-        static void ReadFile(string Filename) 
-        {
-         Console.WriteLine(File.ReadAllText(Filename));
-            //ReadAllText returns a string, ReadAllLines returns an array of strings
-        }
+        //static void ReadFile(string Filename) 
+        //{
+        // Console.WriteLine(File.ReadAllText(Filename));
+        //    //ReadAllText returns a string, ReadAllLines returns an array of strings
+        //}
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to my ttrpg roller!");
