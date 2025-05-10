@@ -23,8 +23,8 @@ namespace TTRPGRoller
 
             //string Filename = @"C:\repos\max";
             string Filename = AppDomain.CurrentDomain.BaseDirectory;
-            WriteFile(Filename);
-            ReadFile(Filename);
+            //WriteFile(Filename);
+            //ReadFile(Filename);
 
             Random random = new Random();
             char redo;
@@ -40,6 +40,9 @@ namespace TTRPGRoller
 
             do
             {
+                int classPick = random.Next(classes.Length);
+                int backgPick = random.Next(background.Length);
+                int racePick = random.Next(race.Length);
                 Console.WriteLine();
                 for(int i = 0; i < 6; i++)
                 {
@@ -48,7 +51,9 @@ namespace TTRPGRoller
 
                     Console.WriteLine($"" + stats[i] + ": " + scores[i]);
                 }
-
+                Console.WriteLine($"CLASS: " + classes[classPick]
+                    + "\nBACKGROUND: " + background[backgPick]
+                    + "\nRACE: " + race[racePick]);
                 
                 Console.Write("\nWould you like to roll a new character? (y/n): ");
                 redo = Console.ReadKey().KeyChar;
