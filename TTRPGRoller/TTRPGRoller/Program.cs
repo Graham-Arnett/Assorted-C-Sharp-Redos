@@ -12,17 +12,17 @@ namespace TTRPGRoller
         //    File.WriteAllText(Filename, "Hello World");
         //}
 
-        //static void ReadFile(string Filename) 
-        //{
-        // Console.WriteLine(File.ReadAllText(Filename));
-        //    //ReadAllText returns a string, ReadAllLines returns an array of strings
-        //}
+        static void ReadFile(string Filename)
+        {
+            Console.WriteLine(File.ReadAllText(Filename));
+            //ReadAllText returns a string, ReadAllLines returns an array of strings
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to my ttrpg roller!");
 
             //string Filename = @"C:\repos\max";
-            string Filename = AppDomain.CurrentDomain.BaseDirectory;
+            string Filename = @AppDomain.CurrentDomain.BaseDirectory"races.txt";
             //WriteFile(Filename);
             //ReadFile(Filename);
 
