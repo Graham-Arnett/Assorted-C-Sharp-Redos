@@ -9,8 +9,8 @@
             Random random = new Random();
 
             string[] questions = {"What has a face and a tail but no body: ", "What has neither flesh, feather, nor bone, but has fingers and thumbs of it's own: "
-            ,"What walks on four legs at dawn, and three at twlight: "};
-            string[] answers = {"COIN","GLOVE","HUMAN"};
+            ,"What walks on four legs at dawn, and three at twlight: ","It rhymes with duck, you need me most of all: "};
+            string[] answers = {"COIN","GLOVE","HUMAN","LUCK"};
 
             char redo;
             do
