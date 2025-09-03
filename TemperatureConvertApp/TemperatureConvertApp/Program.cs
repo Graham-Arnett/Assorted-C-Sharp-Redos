@@ -10,7 +10,7 @@
             {
                 Console.Write("Enter a temperature in fahrenheit: ");
                 double temp = double.Parse(Console.ReadLine());
-                double celsius = (temp - 32) * 5/9;
+                double celsius = Math.Round(((temp - 32) * 5/9),2);
                 Console.WriteLine($"\nThat is {celsius} degrees!");
                 Console.Write("\n\nWould you like to go again? (y/n): ");
                 redo = Console.ReadKey().KeyChar;
